@@ -1,16 +1,3 @@
-"""
-validate_wind_field.py
-Compares CMOD5.n-retrieved wind speeds against ERA5 reanalysis reference data.
-
-Since ERA5 requires CDS API credentials, this script:
-  1. Demonstrates the validation workflow with realistic synthetic reference data
-  2. Exports a validation_table.csv
-
-Usage:
-  python validate_wind_field.py
-  python validate_wind_field.py --api-json response.json --era5-json era5_ref.json
-"""
-
 import json
 import math
 import argparse
