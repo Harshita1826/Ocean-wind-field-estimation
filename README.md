@@ -1,4 +1,4 @@
-# Ocean Wind Field Estimation from SAR Imagery — Indian Coasts
+# Ocean Wind Field Estimation from SAR Imagery - Indian Coasts
 
 **CEC OpenProject 2 · Interim & Final Submission**
 
@@ -36,13 +36,13 @@ over the Tamil Nadu and Gujarat coastlines of India.
 
 ## Quick Start
 
-### 1 — Install dependencies
+### 1 - Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2 — Authenticate Google Earth Engine
+### 2 - Authenticate Google Earth Engine
 
 ```bash
 earthengine authenticate
@@ -54,7 +54,7 @@ Then update the project ID in `app.py` line 35:
 ee.Initialize(project='YOUR-APPROVED-GEE-PROJECT-ID')
 ```
 
-### 3 — Run the API server
+### 3 - Run the API server
 
 ```bash
 uvicorn app:app --host 0.0.0.0 --port 8000 --reload
@@ -62,7 +62,7 @@ uvicorn app:app --host 0.0.0.0 --port 8000 --reload
 
 API docs auto-generated at: `http://localhost:8000/docs`
 
-### 4 — Query wind field
+### 4 - Query wind field
 
 ```bash
 curl -X POST http://localhost:8000/api/wind-field \
@@ -74,7 +74,7 @@ curl -X POST http://localhost:8000/api/wind-field \
   }'
 ```
 
-### 5 — Visualise output
+### 5 - Visualise output
 
 ```bash
 # Demo mode (no GEE required)
@@ -86,7 +86,7 @@ curl ... > response.json
 python visualize_wind_field.py response.json
 ```
 
-### 6 — Run validation
+### 6 - Run validation
 
 ```bash
 python validate_wind_field.py
@@ -143,7 +143,7 @@ python validate_wind_field.py
 
 ## Methodology
 
-### Wind Speed — CMOD5.n GMF
+### Wind Speed - CMOD5.n GMF
 
 The CMOD5.n model (Hersbach 2010) relates σ₀ (VV-pol normalised radar cross section) to
 neutral-stability wind speed at 10 m height:
@@ -155,7 +155,7 @@ neutral-stability wind speed at 10 m height:
 where θ = incidence angle, φ = wind direction relative to SAR look direction.
 Wind speed is retrieved by bisection inversion of this forward model.
 
-### Wind Direction — Gradient Estimation
+### Wind Direction - Gradient Estimation
 
 SAR images of the ocean surface show elongated streaks aligned with the wind direction
 (boundary-layer rolls). A gradient-based proxy across neighbouring σ₀ samples estimates
