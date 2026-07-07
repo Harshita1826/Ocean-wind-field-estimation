@@ -1,19 +1,5 @@
 """
 Ocean Wind Field Estimation API
-================================
-Estimates marine wind velocity vectors from Sentinel-1 SAR (GRD) imagery
-over Indian coastal regions using Google Earth Engine.
-
-Wind Speed  : CMOD5.n empirical geophysical model function (GMF)
-Wind Direction : Local SAR image gradient (streaks proxy) + ERA5 fallback
-Study Areas : Tamil Nadu coast / Gujarat coast
-
-Usage:
-  uvicorn app:app --host 0.0.0.0 --port 8000
-
-POST /api/wind-field
-  Body: { "min_lat": 8.0, "min_lon": 77.0, "max_lat": 10.0, "max_lon": 80.0, "date": "2021-01-15" }
-  Returns: wind speed (m/s), direction (deg from North), u/v components at sampled nodes
 """
 
 import math
