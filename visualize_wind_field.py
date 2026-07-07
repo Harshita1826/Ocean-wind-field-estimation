@@ -1,17 +1,3 @@
-"""
-visualize_wind_field.py
-Generates a publication-quality wind-field map from:
-  (a) A JSON response file produced by the /api/wind-field endpoint, OR
-  (b) Simulated data (when run without arguments) for demonstration.
-
-Output: wind_field_<region>_<date>.png  (matches sample-results style)
-
-Usage:
-  python visualize_wind_field.py                        # demo mode
-  python visualize_wind_field.py response.json          # real API data
-  python visualize_wind_field.py --region gujarat       # Tamil Nadu or Gujarat demo
-"""
-
 import sys
 import json
 import math
